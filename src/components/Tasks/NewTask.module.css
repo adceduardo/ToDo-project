@@ -7,6 +7,19 @@
     display: flex;
     justify-content: space-between;
     gap: 0.75rem;
+    margin-bottom: 0.75rem
+}
+
+.taskTeste{
+    width: 100%;
+    background: var(--danger);
+    border: 1px solid var(--gray-400);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem
 }
 
 .task p{

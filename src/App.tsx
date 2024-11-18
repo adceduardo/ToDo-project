@@ -2,30 +2,29 @@ import { Header } from './components/Header/Header'
 import { Content } from './components/Content/Content'
 
 import './global.css'
-
-const tasks = [
-  {
-    id: '1',
-    title: 'exemplo',
-    isComplete: 'completa'
-  },
-  {
-    id: '2',
-    title: 'exemplo2',
-    isComplete: 'completa'
-  }
-]
+import { useState } from 'react';
 
 export function App() {
+  const [ tasks, setTasks ] = useState([]);
+  
+  function createNewTask(task){
+    setTasks([...tasks, 
+      task
+    ])
+  }
+
+  function completeTask( index ){
+    var aux = tasks;
+    aux[index].isComplete = true;
+    
+    setTasks(aux)
+    console.log(aux)
+  }
 
   return (
     <>
-      <Header />
-      {tasks.map(task => {
-        return(
-          <Content />
-        )
-      })}
+      <Header tasks={tasks} createNewTask={createNewTask}/>
+      <Content tasks={tasks} completeTask={completeTask}/>
     </>
   )
 }
