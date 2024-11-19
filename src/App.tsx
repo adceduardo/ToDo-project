@@ -13,12 +13,11 @@ export function App() {
     ])
   }
 
-  function completeTask( index ){
-    var aux = tasks;
-    aux[index].isComplete = true;
-    
-    setTasks(aux)
-    console.log(aux)
+  function completeTask(index) {
+    var aux = [...tasks]; 
+    console.log(index);
+    aux[index] = { ...aux[index], isComplete: !aux[index].isComplete}; 
+    setTasks(aux); 
   }
 
   return (

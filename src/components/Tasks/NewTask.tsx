@@ -1,8 +1,10 @@
 import styles from './NewTask.module.css'
 import { TbTrash } from 'react-icons/tb'
+import { BsFillCheckCircleFill } from 'react-icons/bs'
 
 export function NewTask({ title, completeTask, id, status}){
-    
+    const isComplete = true;
+
     function setCheckButton(){
         return(
             completeTask(id)
@@ -10,9 +12,9 @@ export function NewTask({ title, completeTask, id, status}){
     }
     
     return(
-        <div className={status == false ? styles.task : styles.taskTeste}>
+        <div className={status ? styles.taskCompleted : styles.task}>
             <button onClick={setCheckButton} className={styles.checkContainer}>
-                <div />
+               {status ? <BsFillCheckCircleFill /> : <div />}
             </button>
             <p>{title}</p>
             <button className={styles.deleteTask}>
