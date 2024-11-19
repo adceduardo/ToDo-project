@@ -1,0 +1,22 @@
+.div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.div img{
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.div p{
+    color: var(--gray-300);
+    font-size: 1rem;
+}
+
+.firstParagraph{
+    font-weight: bold;
+}

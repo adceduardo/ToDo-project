@@ -15,15 +15,21 @@ export function App() {
 
   function completeTask(index) {
     var aux = [...tasks]; 
-    console.log(index);
     aux[index] = { ...aux[index], isComplete: !aux[index].isComplete}; 
     setTasks(aux); 
   }
 
+  
+  function deleteTask( index ){
+    const aux = tasks.filter((task, i) => i != index)
+    setTasks(aux); 
+  }
+
+
   return (
     <>
       <Header tasks={tasks} createNewTask={createNewTask}/>
-      <Content tasks={tasks} completeTask={completeTask}/>
+      <Content tasks={tasks} completeTask={completeTask} deleteTask={deleteTask}/>
     </>
   )
 }
