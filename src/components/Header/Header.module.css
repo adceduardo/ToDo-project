@@ -5,6 +5,7 @@
     align-items: center;
     height: 12.5rem;
     position: relative;
+    width: 100vw;
 }
 
 
@@ -17,6 +18,21 @@
     display: flex;
     gap: 0.5rem;
     padding: 0 1rem;
+
+  
+}
+
+  @media(max-width: 480px){
+    input, .create{
+        font-size: 12px !important;
+        padding: 0 5px !important;
+        background-color: red;
+        height: 75% !important; 
+    }
+
+    input{
+        padding: 1rem!important;
+    }
 }
 
 .formTask input{
@@ -28,6 +44,7 @@
     border-radius: 0.5rem;
     padding: 1rem 1rem;
     font-size: 1rem;
+
 }
 
 .formTask input::placeholder{

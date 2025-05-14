@@ -8,8 +8,10 @@
     display: flex;
     justify-content: space-between;
     gap: 0.75rem;
-    margin-bottom: 0.75rem
+    margin-bottom: 0.75rem;
+    box-sizing: border box;
 }
+
 
 .taskCompleted{
     width: 100%;
@@ -23,6 +25,7 @@
     gap: 0.75rem;
     margin-bottom: 0.75rem;
     text-decoration: line-through;
+    font-weight: bold;
 }
 
 .task p, .taskCompleted p{

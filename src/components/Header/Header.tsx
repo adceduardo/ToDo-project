@@ -7,23 +7,28 @@ import { useRef } from "react"
 export function Header({ tasks, createNewTask }){
     const inputRef = useRef(null)
     
+    function handleSumbit(){
+        event.preventDefault()
+        createNewTask(
+            {
+                
+                id: tasks.length+1,
+                title: inputRef.current.value,
+                isComplete: false
+            }                   
+            );
+        inputRef.current.value = "";
+    }
+
     return(
         <div>
             <header className={styles.header}>
                 <img src={logo}/>
 
                 
-            <form onSubmit={createNewTask} className={styles.formTask}>
+            <form onSubmit={handleSumbit} className={styles.formTask}>
                     <input ref={inputRef} placeholder="Adicione uma nova tarefa"/>
-                    <button type="button" onClick={() => {
-                        createNewTask(
-                        {
-                            
-                            id: tasks.length+1,
-                            title: inputRef.current.value,
-                            isComplete: false
-                        }                   
-                        )}}>
+                    <button type="submit" className={styles.create}>
                         Criar
                         <AiOutlinePlusCircle size={20}/>
                     </button>

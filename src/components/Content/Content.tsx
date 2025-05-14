@@ -23,7 +23,7 @@ export function Content({ tasks, completeTask, deleteTask }) {
       </header>
 
       {createdTasks > 0 ? (
-        <div>
+        <div className={styles.array}>
           {tasks.map((task, idx) => {
             return (
               <NewTask
